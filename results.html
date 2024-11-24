@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Années 2000 - Résultats de Recherche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+
+        #header {
+            background-color: #f2f2f2;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 150px;
+            height: auto;
+        }
+
+        #search-form {
+            margin-left: 20px;
+        }
+
+        #search-input {
+            width: 400px;
+            height: 25px;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        #search-button {
+            height: 36px;
+            font-size: 14px;
+            margin-left: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .results-info {
+            padding: 30px 200px;
+            color: #545454;
+            font-size: 14px;
+        }
+
+        .results-container {
+            padding: 0 200px;
+        }
+
+        .result {
+            margin-bottom: 20px;
+        }
+
+        .result a {
+            font-size: 18px;
+            color: #1a0dab;
+            text-decoration: none;
+        }
+
+        .result a:hover {
+            text-decoration: underline;
+        }
+
+        .result-url {
+            font-size: 14px;
+            color: #006621;
+        }
+
+        .result-description {
+            font-size: 13px;
+            color: #545454;
+        }
+
+        #pagination {
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        #pagination a {
+            font-size: 14px;
+            color: #1a0dab;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        #pagination a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="Google_logo_Transparent.png" alt="Google Logo">
+        <form id="search-form">
+            <input type="text" id="search-input" value="Tapez votre recherche ici...">
+            <input type="button" id="search-button" value="Recherche Google">
+        </form>
+    </div>
+    <div class="results-info">
+        Results 1 - 10 of about 102,000,000. Search took 0.40 seconds.
+    </div>
+    <div class="results-container">
+        <div class="result">
+            <a href="#">Premier résultat pour votre recherche</a>
+            <div class="result-url">www.example.com</div>
+            <div class="result-description">Ceci est un exemple de description pour le premier résultat de votre recherche.</div>
+        </div>
+        <div class="result">
+            <a href="#">Deuxième résultat pour votre recherche</a>
+            <div class="result-url">www.example2.com</div>
+            <div class="result-description">Ceci est une description pour le deuxième résultat de votre recherche.</div>
+        </div>
+        <div class="result">
+            <a href="#">Troisième résultat pour votre recherche</a>
+            <div class="result-url">www.example3.com</div>
+            <div class="result-description">Ceci est une description pour le troisième résultat de votre recherche.</div>
+        </div>
+    </div>
+    <div id="pagination">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">Next</a>
+    </div>
+</body>
+</html>

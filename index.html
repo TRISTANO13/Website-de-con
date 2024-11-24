@@ -46,17 +46,32 @@
             background-color: #e6e6e6;
         }
     </style>
+    <script>
+        function redirectToResults() {
+            const query = document.getElementById("search-input").value;
+            window.location.href = `results.html?q=${encodeURIComponent(query)}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("search-input");
+            searchInput.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    redirectToResults();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div>
-        <img id="logo" src="https://www.google.com/logos/2000/googlelogo_color_150x55dp.gif" alt="Google Logo">
+        <img id="logo" src="Google_logo_Transparent.png" alt="Google Logo">
     </div>
     <div class="search-container">
-        <input type="text" placeholder="Tapez votre recherche ici...">
+        <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
     </div>
     <div class="search-buttons">
-        <input type="button" value="Recherche Google">
-        <input type="button" value="J'ai de la chance">
+        <input type="button" value="Recherche Google" onclick="redirectToResults()">
+        <input type="button" value="J'ai de la chance" onclick="redirectToResults()">
     </div>
 </body>
 </html>
