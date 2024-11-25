@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Images Années 2000</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+
+        #header {
+            background-color: #f2f2f2;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 150px;
+            height: auto;
+        }
+
+        #search-form {
+            margin-left: 20px;
+        }
+
+        #search-input {
+            width: 400px;
+            height: 25px;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        #search-button {
+            height: 36px;
+            font-size: 14px;
+            margin-left: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<script>
+    // Fonction pour rediriger selon la recherche
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input').value.trim();
+        if (searchInput.toLowerCase() === 'chaewon') {
+            window.location.href = 'chaewon.html';
+        } else {
+            window.location.href = 'results.html';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                handleSearch();
+            }
+        });
+        document.getElementById('search-button').addEventListener('click', handleSearch);
+    });
+</script>
+<body>
+    <div id="header">
+        <a href="index.html"><img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo"></a>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
+            <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch">
+        </form>
+    </div>
+</body>

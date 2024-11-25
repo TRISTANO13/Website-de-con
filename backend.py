@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Dossier où se trouvent les images
-IMAGE_FOLDER = 'images'
+IMAGE_FOLDER = 'chaewon'
 
 @app.route('/api/images', methods=['GET'])
 def get_images():

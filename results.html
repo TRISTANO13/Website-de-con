@@ -94,13 +94,55 @@
             text-decoration: underline;
         }
     </style>
+
+    <script>
+    // Fonction pour rediriger selon la recherche
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input').value.trim();
+        if (searchInput.toLowerCase() === 'chaewon') {
+            window.location.href = 'chaewon.html';
+        } else {
+            window.location.href = 'results.html';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                handleSearch();
+            }
+        });
+    });
+    // Fonction pour rediriger selon la recherche
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input').value.trim();
+        if (searchInput.toLowerCase() === 'chaewon') {
+            window.location.href = 'chaewon.html';}
+        else if (searchInput.toLowerCase() === 'idol') {
+            window.location.href = 'idol.html';
+        } else {
+            window.location.href = 'results.html';
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                handleSearch();
+            }
+        });
+    });
+    </script>
+
 </head>
 <body>
     <div id="header">
-        <a href="index.html"><img id="logo" src="Google_logo_Transparent.png" alt="Google Logo"></a>
+        <a href="index.html"><img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo"></a>
         <form id="search-form">
-            <input type="text" id="search-input" value="Tapez votre recherche ici...">
-            <input type="button" id="search-button" value="Recherche Google">
+            <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
+            <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch()">
         </form>
     </div>
     <div class="results-info">
@@ -109,11 +151,11 @@
     <div class="results-container">
         <div class="result">
             <a href="chaewon.html">Chaewon</a>
-            <div class="result-url">www.example.com</div>
+            <div class="result-url">www.chaewon-la-goat.com</div>
             <div class="result-description">Ceci est un exemple de description pour le premier résultat de votre recherche.</div>
         </div>
         <div class="result">
-            <a href="#">Deuxième résultat pour votre recherche</a>
+            <a href="idol.html">Idol</a>
             <div class="result-url">www.example2.com</div>
             <div class="result-description">Ceci est une description pour le deuxième résultat de votre recherche.</div>
         </div>
