@@ -3,72 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Années 2000</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            text-align: center;
-            padding-top: 15%;
-        }
-
-        #logo {
-            width: 275px;
-            height: auto;
-        }
-
-        .search-container {
-            margin-top: 20px;
-        }
-
-        input[type="text"] {
-            width: 400px;
-            height: 25px;
-            font-size: 16px;
-            padding: 5px;
-            border: 1px solid #dcdcdc;
-        }
-
-        .search-buttons {
-            margin-top: 15px;
-        }
-
-        input[type="button"] {
-            font-size: 14px;
-            padding: 6px 12px;
-            margin: 5px;
-            background-color: #f2f2f2;
-            border: 1px solid #dcdcdc;
-            cursor: pointer;
-        }
-
-        input[type="button"]:hover {
-            background-color: #e6e6e6;
-        }
-    </style>
-    <script>
-        // Fonction pour rediriger selon la recherche
-        function handleSearch() {
-            const searchInput = document.getElementById('search-input').value.trim();
-            if (searchInput.toLowerCase() === 'chaewon') {
-                window.location.href = 'chaewon.html';}
-            else if (searchInput.toLowerCase() === 'idol') {
-                window.location.href = 'idol.html';
-            } else {
-                window.location.href = 'results.html';
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchInput = document.getElementById("search-input");
-            searchInput.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                    handleSearch();
-                }
-            });
-        });
-    </script>
+    <title>Oh le site de con</title>
 </head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        text-align: center;
+        padding-top: 15%;
+    }
+
+    #logo {
+        width: 275px;
+        height: auto;
+    }
+
+    .search-container {
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        width: 400px;
+        height: 25px;
+        font-size: 16px;
+        padding: 5px;
+        border: 1px solid #dcdcdc;
+    }
+
+    .search-buttons {
+        margin-top: 15px;
+    }
+
+    input[type="button"] {
+        font-size: 14px;
+        padding: 6px 12px;
+        margin: 5px;
+        background-color: #f2f2f2;
+        border: 1px solid #dcdcdc;
+        cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+        background-color: #e6e6e6;
+    }
+</style>
+
+<script>
+    // Fonction pour rediriger selon la recherche
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input').value.trim();
+        if (searchInput.toLowerCase() === 'chaewon') {
+            window.location.href = 'chaewon.html';}
+        else if (searchInput.toLowerCase() === 'idol') {
+            window.location.href = 'idol.html';}
+        else if (searchInput.toLowerCase() === 'netflix') {
+            window.location.href = 'http://tristanhost.ddns.net:8096';
+        } else {
+            window.location.href = 'results.html';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                handleSearch();
+            }
+        });
+    });
+</script>
+
 <body>
     <div>
         <img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo">

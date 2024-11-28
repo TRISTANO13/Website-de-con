@@ -4,98 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Années 2000 - Résultats de Recherche</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            text-align: left;
-            padding: 0;
-            margin: 0;
-        }
+</head>
 
-        #header {
-            background-color: #f2f2f2;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
 
-        #logo {
-            width: 150px;
-            height: auto;
-        }
+    #header {
+        background-color: #f2f2f2;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
 
-        #search-form {
-            margin-left: 20px;
-        }
+    #logo {
+        width: 150px;
+        height: auto;
+    }
 
-        #search-input {
-            width: 400px;
-            height: 25px;
-            font-size: 16px;
-            padding: 5px;
-        }
+    #search-form {
+        margin-left: 20px;
+    }
 
-        #search-button {
-            height: 36px;
-            font-size: 14px;
-            margin-left: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+    #search-input {
+        width: 400px;
+        height: 25px;
+        font-size: 16px;
+        padding: 5px;
+    }
 
-        .results-info {
-            padding: 30px 200px;
-            color: #545454;
-            font-size: 14px;
-        }
+    #search-button {
+        height: 36px;
+        font-size: 14px;
+        margin-left: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
 
-        .results-container {
-            padding: 0 200px;
-        }
+    .results-info {
+        padding: 30px 200px;
+        color: #545454;
+        font-size: 14px;
+    }
 
-        .result {
-            margin-bottom: 20px;
-        }
+    .results-container {
+        padding: 0 200px;
+    }
 
-        .result a {
-            font-size: 18px;
-            color: #1a0dab;
-            text-decoration: none;
-        }
+    .result {
+        margin-bottom: 20px;
+    }
 
-        .result a:hover {
-            text-decoration: underline;
-        }
+    .result a {
+        font-size: 18px;
+        color: #1a0dab;
+        text-decoration: none;
+    }
 
-        .result-url {
-            font-size: 14px;
-            color: #006621;
-        }
+    .result a:hover {
+        text-decoration: underline;
+    }
 
-        .result-description {
-            font-size: 13px;
-            color: #545454;
-        }
+    .result-url {
+        font-size: 14px;
+        color: #006621;
+    }
 
-        #pagination {
-            padding: 20px 40px;
-            text-align: center;
-        }
+    .result-description {
+        font-size: 13px;
+        color: #545454;
+    }
 
-        #pagination a {
-            font-size: 14px;
-            color: #1a0dab;
-            text-decoration: none;
-            margin: 0 5px;
-        }
+    #pagination {
+        padding: 20px 40px;
+        text-align: center;
+    }
 
-        #pagination a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    #pagination a {
+        font-size: 14px;
+        color: #1a0dab;
+        text-decoration: none;
+        margin: 0 5px;
+    }
 
-    <script>
+    #pagination a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
     // Fonction pour rediriger selon la recherche
     function handleSearch() {
         const searchInput = document.getElementById('search-input').value.trim();
@@ -136,7 +138,6 @@
     });
     </script>
 
-</head>
 <body>
     <div id="header">
         <a href="index.html"><img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo"></a>
@@ -153,6 +154,11 @@
             <a href="chaewon.html">Chaewon</a>
             <div class="result-url">www.chaewon-la-goat.com</div>
             <div class="result-description">Ceci est un exemple de description pour le premier résultat de votre recherche.</div>
+        </div>
+        <div class="result">
+            <a href="http://tristanhost.ddns.net:8096">Netflix</a>
+            <div class="result-url">www.netflix-tqt.com</div>
+            <div class="result-description">Ceci est une description pour le deuxième résultat de votre recherche.</div>
         </div>
         <div class="result">
             <a href="idol.html">Idol</a>
