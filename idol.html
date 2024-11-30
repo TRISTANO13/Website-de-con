@@ -7,10 +7,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            text-align: left;
-            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            height: 100vh;
             margin: 0;
+            padding: 0;
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .left-section {
+            background-color: #ffffff;
+        }
+
+        .right-section {
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #main-image {
+            width: 80%;
+            height: auto;
+        }
+
+        .button {
+            width: 150px;
+            height: 50px;
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1ed760;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         #header {
@@ -18,6 +61,11 @@
             padding: 10px 20px;
             display: flex;
             align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         #logo {
@@ -43,11 +91,14 @@
             padding: 5px 10px;
             cursor: pointer;
         }
-
     </style>
-
+    <script src="script.js"></script>
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
+        }
+    </script>
 </head>
-<script src = "script.js"></script>
 <body>
     <div id="header">
         <a href="index.html"><img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo"></a>
@@ -56,4 +107,13 @@
             <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch()">
         </form>
     </div>
+    <div class="left-section">
+        <img id="main-image" src="images/rosé.jpg" alt="Image principale">
+    </div>
+    <div class="right-section">
+        <button class="button" onmouseover="changeImage('images/rosé.jpg')">ROSÉ</button>
+        <button class="button" onmouseover="changeImage('images/chaewon.jpg')">Kim Chaewon</button>
+        <button class="button" onmouseover="changeImage('images/kaaris.jpg')">Kaaris</button>
+    </div>
 </body>
+</html>
