@@ -41,7 +41,7 @@
         .button {
             width: 150px;
             height: 50px;
-            background-color: #1DB954;
+            background-color: #272727;
             color: white;
             border: none;
             border-radius: 25px;
@@ -52,7 +52,7 @@
         }
 
         .button:hover {
-            background-color: #1ed760;
+            background-color: #5f5f5f;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -97,6 +97,10 @@
         function changeImage(imageSrc) {
             document.getElementById('main-image').src = imageSrc;
         }
+        function changeText(newText) {
+            document.getElementById('text').innerText = newText;
+        }
+
     </script>
 </head>
 <body>
@@ -111,9 +115,11 @@
         <img id="main-image" src="images/rosé.jpg" alt="Image principale">
     </div>
     <div class="right-section">
-        <button class="button" onmouseover="changeImage('images/rosé.jpg')">ROSÉ</button>
-        <button class="button" onmouseover="changeImage('images/chaewon.jpg')">Kim Chaewon</button>
-        <button class="button" onmouseover="changeImage('images/kaaris.jpg')">Kaaris</button>
+        <button class="button" onmouseover="changeImage('images/rosé.jpg'); changeText('La chanteuse préférée de ton idol préférée.')">ROSÉ</button>
+        <button class="button" onmouseover="changeImage('images/chaewon.jpg'); changeText('So many people !')">Kim Chaewon</button>
+        <button class="button" onmouseover="changeImage('images/kaaris.jpg'); changeText('Je sors ma bite comme le marteau de Thor !')">Kaaris</button>
+
+        <h1 id="text">test</h1>
     </div>
 </body>
 </html>
