@@ -92,7 +92,7 @@
             cursor: pointer;
         }
     </style>
-    <script src="script.js"></script>
+    <script src="/script/script.js"></script>
     <script>
         function changeImage(imageSrc) {
             document.getElementById('main-image').src = imageSrc;
@@ -105,21 +105,21 @@
 </head>
 <body>
     <div id="header">
-        <a href="index.html"><img id="logo" src="images/Google_logo_Transparent.png" alt="Google Logo"></a>
+        <a href="/index.html"><img id="logo" src="/images/Google_logo_Transparent.png" alt="Google Logo"></a>
         <form id="search-form">
             <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
             <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch()">
         </form>
     </div>
     <div class="left-section">
-        <img id="main-image" src="images/rosé.jpg" alt="Image principale">
+        <img id="main-image" src="/images/rosé.jpg" alt="Image principale">
     </div>
     <div class="right-section">
-        <button class="button" onmouseover="changeImage('images/rosé.jpg'); changeText('La chanteuse préférée de ton idol préférée.')">ROSÉ</button>
-        <button class="button" onmouseover="changeImage('images/chaewon.jpg'); changeText('So many people !')">Kim Chaewon</button>
-        <button class="button" onmouseover="changeImage('images/kaaris.jpg'); changeText('Je sors ma bite comme le marteau de Thor !')">Kaaris</button>
+        <button class="button" onmouseover="changeImage('/images/rosé.jpg'); changeText('La chanteuse préférée de ton idol préférée.')">ROSÉ</button>
+        <button class="button" onmouseover="changeImage('/images/chaewon.jpg'); changeText('So many people !')" onclick="window.location.href='/html/chaewon.html'">Kim Chaewon</button>
+        <button class="button" onmouseover="changeImage('/images/kaaris.jpg'); changeText('Je sors ma bite comme le marteau de Thor !')">Kaaris</button>
 
-        <h1 id="text">test</h1>
+        <h1 id="text">La chanteuse préférée de ton idol préférée.</h1>
     </div>
 </body>
 </html>

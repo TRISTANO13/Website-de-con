@@ -4,13 +4,13 @@
 function handleSearch() {
     const searchInput = document.getElementById('search-input').value.trim();
     if (searchInput.toLowerCase() === 'chaewon') {
-        window.location.href = 'chaewon.html';
+        window.location.href = '/html/chaewon.html';
     } else if (searchInput.toLowerCase() === 'idol') {
-        window.location.href = 'idol.html';
+        window.location.href = '/html/idol.html';
     } else if (searchInput.toLowerCase() === 'netflix' || searchInput.toLowerCase() === 'jellyfin' || searchInput.toLowerCase() === 'stream') {
         window.location.href = 'http://tristanhost.ddns.net:8096';
     } else {
-        window.location.href = 'results.html';
+        window.location.href = '/html/results.html';
     }
 }
 
