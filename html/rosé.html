@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Images Années 2000</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/images/rosé-background.png') no-repeat center center fixed;
+            background-size: cover;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+        }
+
+        #header {
+            background-color: rgba(242, 242, 242, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 150px;
+            height: auto;
+        }
+
+        #search-form {
+            margin-left: 20px;
+        }
+
+        #search-input {
+            width: 400px;
+            height: 25px;
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        #search-button {
+            height: 36px;
+            font-size: 14px;
+            margin-left: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #button-container {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+
+        #custom-button {
+            background-color: #373737;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        #custom-button:hover {
+            background-color: #919191;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<script src="/script/script.js"></script>
+<body>
+    <div id="header">
+        <a href="/index.html"><img id="logo" src="/images/Google_logo_Transparent.png" alt="Google Logo"></a>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
+            <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch()">
+        </form>
+    </div>
+    <div id="button-container">
+        <button id="custom-button" onclick="window.location.href='/html/chaewon-image.html'">La GOAT</button>
+    </div>
+</body>
+</html>

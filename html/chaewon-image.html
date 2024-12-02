@@ -96,7 +96,7 @@
     function loadImages() {
         const container = document.getElementById('images-container');
 
-        fetch('http://tristanhost.ddns.net:5000/api/images')
+        fetch('http://tristanhost.ddns.net:5000/api/chaewon')
             .then(response => response.json())
             .then(images => {
                 images.forEach(src => {
