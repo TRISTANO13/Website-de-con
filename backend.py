@@ -5,23 +5,31 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Dossier où se trouvent les images
-IMAGE_FOLDER = 'chaewon'
-
-@app.route('/api/chaewon', methods=['GET'])
-def get_images():
-    IMAGE_FOLDER = 'chaewon'
+@app.route('/api/<folder_name>', methods=['GET'])
+def get_images(folder_name):
+    # Utiliser le paramètre folder_name pour définir le chemin du dossier
+    IMAGE_FOLDER = os.path.join(os.getcwd(), folder_name)
+    
+    # Vérifier si le dossier existe
+    if not os.path.exists(IMAGE_FOLDER):
+        return jsonify({"error": "Folder not found"}), 404
+    
     # Récupérer la liste des fichiers d'images dans le dossier
     images = []
     for filename in os.listdir(IMAGE_FOLDER):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
-            images.append(request.host_url + 'images/' + filename)
+            images.append(request.host_url + f'images/{folder_name}/{filename}')
+    
     return jsonify(images)
 
-
-@app.route('/images/<path:filename>', methods=['GET'])
-def serve_image(filename):
-    # Servir une image directement depuis le dossier des images
+@app.route('/images/<folder_name>/<path:filename>', methods=['GET'])
+def serve_image(folder_name, filename):
+    IMAGE_FOLDER = os.path.join(os.getcwd(), folder_name)
+    
+    # Vérifier si le fichier demandé existe dans le dossier
+    if not os.path.exists(os.path.join(IMAGE_FOLDER, filename)):
+        return jsonify({"error": "File not found"}), 404
+    
     return send_from_directory(IMAGE_FOLDER, filename)
 
 if __name__ == '__main__':
