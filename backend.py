@@ -5,17 +5,27 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Dossier où se trouvent les images
-IMAGE_FOLDER = 'chaewon'
 
 @app.route('/api/chaewon', methods=['GET'])
 def get_images():
+    IMAGE_FOLDER = '/chaewon'
     # Récupérer la liste des fichiers d'images dans le dossier
     images = []
     for filename in os.listdir(IMAGE_FOLDER):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
             images.append(request.host_url + 'images/' + filename)
     return jsonify(images)
+
+@app.route('/api/rosé', methods=['GET'])
+def get_images():
+    IMAGE_FOLDER = '/rosé'
+    # Récupérer la liste des fichiers d'images dans le dossier
+    images = []
+    for filename in os.listdir(IMAGE_FOLDER):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+            images.append(request.host_url + 'images/' + filename)
+    return jsonify(images)
+
 
 @app.route('/images/<path:filename>', methods=['GET'])
 def serve_image(filename):
