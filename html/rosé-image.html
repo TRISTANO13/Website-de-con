@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Images Années 2000</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    #header {
+        background-color: #f2f2f2;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    #logo {
+        width: 150px;
+        height: auto;
+    }
+
+    #search-form {
+        margin-left: 20px;
+    }
+
+    #search-input {
+        width: 400px;
+        height: 25px;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #search-button {
+        height: 36px;
+        font-size: 14px;
+        margin-left: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .images-container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .image-item {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #dcdcdc;
+        background-color: #f9f9f9;
+    }
+
+    .image-item img {
+        max-width: 100%;
+        max-height: 100%;
+        cursor: pointer;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    #overlay img {
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+    }
+</style>
+
+<script src = "/script/script.js"> </script>
+<script>
+    // Fonction pour charger les images depuis l'API backend
+    function loadImages() {
+        const container = document.getElementById('images-container');
+
+        fetch('http://tristanhost.ddns.net:5000/api/rosé')
+            .then(response => response.json())
+            .then(images => {
+                images.forEach(src => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = src;
+                    imgElement.onclick = () => openOverlay(src);
+                    const imageItem = document.createElement('div');
+                    imageItem.className = 'image-item';
+                    imageItem.appendChild(imgElement);
+                    container.appendChild(imageItem);
+                });
+            })
+            .catch(error => console.error('Erreur lors du chargement des images:', error));
+    }
+
+    // Fonction pour ouvrir l'overlay
+    function openOverlay(src) {
+        const overlay = document.getElementById('overlay');
+        const overlayImg = document.getElementById('overlay-img');
+        overlayImg.src = src;
+        overlay.style.display = 'flex';
+    }
+
+    // Fonction pour fermer l'overlay
+    function closeOverlay() {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none';
+    }
+
+    // Charger les images au chargement de la page
+    document.addEventListener('DOMContentLoaded', loadImages);
+
+</script>
+
+<body>
+    <div id="header">
+        <a href="/index.html"><img id="logo" src="/images/Google_logo_Transparent.png" alt="Google Logo"></a>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Tapez votre recherche ici...">
+            <input type="button" id="search-button" value="Recherche Google" onclick="handleSearch()">
+        </form>
+    </div>
+    <div class="images-container" id="images-container">
+        <!-- Les images seront ajoutées ici dynamiquement -->
+    </div>
+
+    <div id="overlay" onclick="closeOverlay()">
+        <img id="overlay-img" src="" alt="Image agrandie">
+    </div>
+
+    
+</body>
+</html>
